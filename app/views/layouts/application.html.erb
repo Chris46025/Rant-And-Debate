@@ -5,6 +5,9 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+   <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js">    </script>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js">    </script>
 </head>
 <body>
   <script>//Facebook Script
@@ -25,14 +28,59 @@
    }(document, 'script', 'facebook-jssdk'));
   </script>
 
-	<div id="user-widget">
-  <% if current_user %>
-    Welcome <strong><%= current_user.name %></strong>!
-    <%= link_to "Sign out", signout_path, id: "sign_out" %>
-  <% else %>
-    <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
-  <% end %>
-</div>
+
+
+
+  <nav class="navbar navbar-default" role="navigation">
+  <!-- Brand and toggle get grouped for better mobile display -->
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="#"><strong>RND</strong></a>
+  </div>
+
+  <!-- Collect the nav links, forms, and other content for toggling -->
+  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <ul class="nav navbar-nav">
+      <li><a href="#">Rant</a></li>
+      <li><a href="#">Debate</a></li>
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Hot Topics <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">School</a></li>
+          <li><a href="#">Legal System</a></li>
+          <li><a href="#">Video Games</a></li>
+        </ul>
+      </li>
+    </ul>
+    <div class="col-sm-3 col-md-3">
+        <form class="navbar-form" role="search">
+        <div class="input-group">
+            <input type="text" class="form-control" placeholder="Search" name="q">
+            <div class="input-group-btn">
+                <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+            </div>
+        </div>
+        </form>
+    </div>
+    <ul class="nav navbar-nav navbar-right">
+      <li class="dropdown">
+        <% if current_user %>
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><strong><%= current_user.name %></strong> <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+          <li><%= link_to "Sign out", signout_path, id: "sign_out" %></li>
+          <% else %>
+        <li> <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %> <li>
+        </ul>
+      </li>
+    </ul>
+    <% end %>
+  </div><!-- /.navbar-collapse -->
+</nav>
 
 <%= yield %>
 

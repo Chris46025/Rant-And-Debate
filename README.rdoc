@@ -2,13 +2,52 @@
 
 
 * Programming Tools
+
 	ruby 2.1.2p95 (2014-05-08 revision 45877) [x86_64-darwin13.0]
+	
 	Rails 4.1.4
 
 * Creating FB Authentication
+	
 	1. Follow Create API/App key on FB development page
+	
 	2. For dev. use localhost:3000 as web URL
+	
 	3. Make sure you have a root page to redirect to
+	
 	4. Follow instructions from https://coderwall.com/p/bsfitw to set up the authentication on rails
+
+* Add Bootstrap/Bootsnip 
+	
+	1. Download Bootstrap
+
+	2. Copy:
+		
+		bootstrap/dist/css/bootstrap.css and bootstrap/dist/css/bootstrap.min.css
+	
+		To: vendor/assets/stylesheets
+	
+	3. Copy:
+	
+		bootstrap/dist/js/bootstrap.js and bootstrap/dist/js/bootstrap.min.js
+	
+		To: vendor/assets/javascripts
+	
+	4. Update: app/assets/stylesheets/application.css by adding:
+	
+		*= require bootstrap.min
+	
+	5. Update: app/assets/javascripts/application.jsby adding:
+	
+		//= require bootstrap.min
+
+	6. Add this code to the head of all the pages where you are using javascript and jquery on your bootstrap code
+
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js">    </script>
+    	
+    	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    	
+    	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js">    </script>
+
 
 
