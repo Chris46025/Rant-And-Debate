@@ -10,5 +10,11 @@
   <%= @rant.body %>
 </p>
 
+<h3>Comments</h3>
+<%= render partial: 'rants/comment', collection: @rant.comments %>
+
 <%= link_to 'Edit', edit_rant_path(@rant) %> |
 <%= link_to 'Back', rants_path %>
+<p>
+<%= render partial: 'rants/comments' %>
+</p>

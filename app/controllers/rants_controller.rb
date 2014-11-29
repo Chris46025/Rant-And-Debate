@@ -10,6 +10,8 @@ class RantsController < ApplicationController
   # GET /rants/1
   # GET /rants/1.json
   def show
+    @comment = Comment.new
+    @comment.rant_id = @rant.id
   end
 
   # GET /rants/new

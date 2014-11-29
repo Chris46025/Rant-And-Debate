@@ -8,7 +8,9 @@ Rails.application.routes.draw do
 
   resources :debates
 
-  resources :rants
-
   resources :topics
+
+  resources :rants do
+ 	resources :comments
   end
+end
