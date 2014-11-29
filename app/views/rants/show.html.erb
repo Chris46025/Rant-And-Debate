@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @rant.name %>
+</p>
+
+<p>
+  <strong>Body:</strong>
+  <%= @rant.body %>
+</p>
+
+<%= link_to 'Edit', edit_rant_path(@rant) %> |
+<%= link_to 'Back', rants_path %>

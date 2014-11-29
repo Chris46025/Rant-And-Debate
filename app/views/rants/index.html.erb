@@ -1,0 +1,36 @@
+<h1>Listing rants</h1>
+
+<% @rants.each do |rant| %>
+  <div class="container">
+  <div class="row">
+    
+        <div class="timeline-centered">
+
+        <article class="timeline-entry">
+
+            <div class="timeline-entry-inner">
+
+                <div class="timeline-icon bg-success">
+                    <i class="entypo-feather"></i>
+                </div>
+
+                <div class="timeline-label">
+                    <h2><%= link_to '#' + rant.name, rant %></h2>
+                    <p><%= rant.body %></p>
+                    <%= link_to 'Edit', edit_rant_path(rant) %>
+                    <%= link_to 'Destroy', rant, method: :delete, data: { confirm: 'Are you sure?' } %>
+                </div>
+
+            </div>
+
+        </article>
+
+        </div>
+  </div>
+  </div>
+  <% end %>
+
+
+<br>
+
+<%= link_to 'New Rant', new_rant_path %>

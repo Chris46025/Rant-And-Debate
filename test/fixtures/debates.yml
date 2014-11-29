@@ -2,10 +2,8 @@
 
 one:
   name: MyString
-  rant: false
-  debate: false
+  body: MyText
 
 two:
   name: MyString
-  rant: false
-  debate: false
+  body: MyText

@@ -46,12 +46,12 @@
   <!-- Collect the nav links, forms, and other content for toggling -->
   <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
     <ul class="nav navbar-nav">
-      <li><a href="#">Rant</a></li>
-      <li><a href="#">Debate</a></li>
+      <li><%= link_to "Rants", { :controller => 'rants', :action => 'index' }%></li>
+      <li><%= link_to "Debates", { :controller => 'debates', :action => 'index' }%></li>
       <li class="dropdown">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Hot Topics <b class="caret"></b></a>
         <ul class="dropdown-menu">
-          <li><a href="#">School</a></li>
+          <li><%= link_to "Topics", { :controller => 'topics', :action => 'index' }%></li>
           <li><a href="#">Legal System</a></li>
           <li><a href="#">Video Games</a></li>
         </ul>

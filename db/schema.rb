@@ -11,11 +11,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141128181736) do
+ActiveRecord::Schema.define(version: 20141129011045) do
+
+  create_table "debates", force: true do |t|
+    t.string   "name"
+    t.text     "body"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "rants", force: true do |t|
+    t.string   "name"
+    t.text     "body"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "topics", force: true do |t|
     t.string   "name"
-    t.text     "body"
+    t.boolean  "rant"
+    t.boolean  "debate"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

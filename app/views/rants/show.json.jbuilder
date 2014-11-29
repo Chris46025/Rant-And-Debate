@@ -1,0 +1,1 @@
+json.extract! @rant, :id, :name, :body, :created_at, :updated_at

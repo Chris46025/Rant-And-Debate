@@ -16,8 +16,12 @@
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :body %><br>
-    <%= f.text_area :body %>
+    <%= f.label :rant %><br>
+    <%= f.check_box :rant %>
+  </div>
+  <div class="field">
+    <%= f.label :debate %><br>
+    <%= f.check_box :debate %>
   </div>
   <div class="actions">
     <%= f.submit %>
