@@ -37,14 +37,6 @@ ActiveRecord::Schema.define(version: 20141129023619) do
     t.datetime "updated_at"
   end
 
-  create_table "topics", force: true do |t|
-    t.string   "name"
-    t.boolean  "rant"
-    t.boolean  "debate"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "users", force: true do |t|
     t.string   "provider"
     t.string   "uid"
