@@ -1,15 +1,11 @@
-<h3>Post a Comment</h3>
-
 <%= form_for [ @rant, @comment ] do |f| %>
-  <p>
-    <%= f.label :author %><br/>
-    <%= f.text_field :author %>
-  </p>
-  <p>
-    <%= f.label :body %><br/>
-    <%= f.text_area :body %>
-  </p>
-  <p>
+
+    <div class="well" style="width:850px; text-align: center; position: fixed;">
+        <h3>Post a Comment</h3><br>
+    <div class="input-group">
+        <%= f.text_area :body %>
+    </div>
     <%= f.submit 'Submit' %>
-  </p>
+    </div>
+    
 <% end %>

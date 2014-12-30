@@ -4,7 +4,11 @@ class RantsController < ApplicationController
   # GET /rants
   # GET /rants.json
   def index
-    @rants = Rant.all
+    if params[:tag]
+      @rants = Rant.tagged_with(params[:tag])
+    else
+      @rants = Rant.all
+    end
   end
 
   # GET /rants/1
@@ -71,6 +75,6 @@ class RantsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def rant_params
-      params.require(:rant).permit(:name, :body)
+      params.require(:rant).permit(:name, :body, :tag_list)
     end
 end

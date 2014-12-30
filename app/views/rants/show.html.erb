@@ -1,20 +1,30 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @rant.name %>
+<div class="well" style="width:850px;">
+	<p>
+  		<strong>Name:</strong>
+  		<%= @rant.name %>
+	</p>
+
+	<p>
+  		<strong>Body:</strong>
+  		<%= @rant.body %>
+	</p>
+	
+	<p>
+		 http://api.meetup.com/2/groups.json/?zip=11211&topic=moms&order=members&key=1565185c58604413f44101a5b4a4046
+	</p>
+
+	<%= link_to 'Edit', edit_rant_path(@rant) %> |
+	<%= link_to 'Back', rants_path %>
+</div>
+
+<div class="well" style="width:850px;">
+	<h3>Comments</h3>
+		<%= render partial: 'rants/comment', collection: @rant.comments %>
+</div>
+
+<p>	
+	<%= render partial: 'rants/comments' %>
 </p>
 
-<p>
-  <strong>Body:</strong>
-  <%= @rant.body %>
-</p>
-
-<h3>Comments</h3>
-<%= render partial: 'rants/comment', collection: @rant.comments %>
-
-<%= link_to 'Edit', edit_rant_path(@rant) %> |
-<%= link_to 'Back', rants_path %>
-<p>
-<%= render partial: 'rants/comments' %>
-</p>

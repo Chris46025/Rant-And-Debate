@@ -47,7 +47,7 @@
   <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
     <ul class="nav navbar-nav">
       <li><%= link_to "Rants", { :controller => 'rants', :action => 'index' }%></li>
-      <li><%= link_to "Debates", { :controller => 'debates', :action => 'index' }%></li>
+      
       <li class="dropdown">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Hot Topics <b class="caret"></b></a>
         <ul class="dropdown-menu">
@@ -82,7 +82,45 @@
   </div><!-- /.navbar-collapse -->
 </nav>
 
-<%= yield %>
+<div class="sidebar-nav">
+    <div class="well" style="width:200px; padding: 8px 0; text-align: center;">
+    <ul class="nav nav-list"> 
+      <li class="nav-header">Admin Menu</li>        
+      <li><a href="index"><i class="icon-home"></i> Dashboard</a></li>
+          <li><a href="#"><i class="icon-envelope"></i> Messages <span class="badge badge-info">4</span></a></li>
+          <li><a href="#"><i class="icon-comment"></i> Comments <span class="badge badge-info">10</span></a></li>
+      <li class="active"><a href="#"><i class="icon-user"></i> Members</a></li>
+          <li class="divider"></li>
+      <li><a href="#"><i class="icon-comment"></i> Settings</a></li>
+      <li><a href="#"><i class="icon-share"></i> Logout</a></li>
+    </ul>
+  </div>
+</div>
+
+<div class="sidebar-nav-right " >
+    <div class="well" style="width:200px; padding: 8px 0; text-align: center;">
+    <ul class="nav nav-list"> 
+      <li class="nav-header">Admin Menu</li>        
+      <li><a href="index"><i class="icon-home"></i> Dashboard</a></li>
+          <li><a href="#"><i class="icon-envelope"></i> Messages <span class="badge badge-info">4</span></a></li>
+          <li><a href="#"><i class="icon-comment"></i> Comments <span class="badge badge-info">10</span></a></li>
+      <li class="active"><a href="#"><i class="icon-user"></i> Members</a></li>
+          <li class="divider"></li>
+      <li><a href="#"><i class="icon-comment"></i> Settings</a></li>
+      <li><a href="#"><i class="icon-share"></i> Logout</a></li>
+    </ul>
+  </div>
+</div>
+
+    <div class="col-lg-4 col-sm-6 text-center">
+          <p><%= yield %></p>
+      </div>
+    
+  
+
+
+
+
 
 </body>
 </html>
